@@ -1,12 +1,19 @@
 @mixin txt-typography($typo){
     $typography: map-get($map: $txt-typography, $key: $typo);
     font-family: map-get($typography, font);
-    font-weight: map-get($typography, weight);
+    font-weight: map-get($map: $typography, $key: weight);
     font-size: map-get($map: $typography, $key: size);
 }
 
-@mixin card ($color: $white, $bg-clr: $white){
-    background-color: $color;
-    border-radius: 15px;
-    box-shadow: 0px 4px 15px darken($bg-clr, 10%);
+@mixin card ($shadow: $stepcard-shadow, $percent: 10%, $color: $white, $parent-bg-clr: $color-bg, $radius: 15px){
+    background: $color;
+    border-radius: $radius;
+    box-shadow: $shadow darken($parent-bg-clr, $percent);
+}
+
+@mixin btn ($shadow, $percent){
+    color: $white;
+    border: none;
+    @include card ($shadow, $percent, $color: $gradient, $radius: $btn-radius);
+    @include txt-typography(button);
 }
