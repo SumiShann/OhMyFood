@@ -2,11 +2,10 @@ header{
     display: flex;
     justify-content: center;
     height: 63px;
-}
-
-header img{
-    width: 162px;
-    height: 40px;
-    align-self: flex-end;
-    padding-bottom: 5px;
+    img{
+        width: 162px;
+        height: 40px;
+        align-self: flex-end;
+        padding-bottom: 5px;
+    }
 }

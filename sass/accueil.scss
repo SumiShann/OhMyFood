@@ -1,5 +1,13 @@
+/*utils*/
 @import "./utils/variables";
-@import "./utils/placeholders";
+@import "./utils/mixins";
+
+/*base*/
 @import "./base/base";
+
+/*layout*/
 @import "./layout/header";
 @import "./layout/footer";
+
+/*page*/
+@import "./pages/page-accueil";

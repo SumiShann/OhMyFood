@@ -5,3 +5,44 @@ $gradient: linear-gradient ($color-secondary to $color-primary);
 $white: #FFFF;
 $color-bg: #D2D2D2;
 $color-bg-footer: #353535;
+
+$normal-txt: 'Roboto', sans-serif;
+$title-txt: 'Shrikhand', cursive;
+
+$txt-typography: (
+    home-h2:(
+        font: $normal-txt,
+        weight: 700,
+        size: 24px,
+    ),
+    button:(
+        font: $normal-txt,
+        weight: 500,
+        size: 16px,
+    ),
+    step:(
+        font: $normal-txt,
+        weight: 500,
+        size: 16px,
+    ),
+    location:(
+        font: $normal-txt,
+        weight: 500,
+        size: 16px,
+    ),
+    menu-h1:(
+        font: $title-txt,
+        weight: 400,
+        size: 28px,
+    ),
+    menu-h2:(
+        font: $normal-txt,
+        weight: 300,
+        size: 16px,
+    ),
+    menu-h3:(
+        font: $normal-txt,
+        weight: 500,
+        size: 18px,
+    )
+);
