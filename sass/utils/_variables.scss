@@ -7,6 +7,8 @@ $color-bg: #F6F6F6;
 $color-bg-footer: #353535;
 
 $color-txt: #353535;
+$color-i-step: #7E7E7E;
+$color-a: #0000;
 
 $stepcard-shadow: 0px 4px 15px;
 $explore-btn-shadow: 0px 4px 10px;
@@ -23,6 +25,11 @@ $txt-typography: (
         font: $normal-txt,
         weight: 700,
         size: 1.5rem,
+    ),
+    home-h3:(
+        font: $normal-txt,
+        weight: 700,
+        size: 18px,
     ),
     button:(
         font: $normal-txt,

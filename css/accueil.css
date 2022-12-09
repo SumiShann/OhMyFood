@@ -14,6 +14,13 @@ body {
   margin: auto;
 }
 
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: rgba(0, 0, 0, 0);
+}
+
 /*components
 
 /*layout*/
@@ -89,6 +96,56 @@ h2 {
   margin-bottom: 20px;
 }
 
+.expl {
+  height: 445px;
+  padding: 50px 0px 55px 0px;
+}
+.expl ul {
+  padding: 0%;
+  display: flex;
+  flex-direction: column;
+}
+.expl ul li {
+  padding: 13px 20px 13px 35px;
+  display: block;
+  width: 100%;
+}
+
+.step {
+  background: #F6F6F6;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px #d9d9d9;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+}
+.step_number {
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: #9356DC;
+  color: #F6F6F6;
+  position: relative;
+  right: 15px;
+}
+.step-txt--margin {
+  margin-left: 4px;
+}
+.step i {
+  color: #7E7E7E;
+  font-size: 17px;
+  padding: 0px 22px 0px 8px;
+}
+
+.rstrnts {
+  background-color: #F6F6F6;
+  padding: 50px 0px;
+}
+.rstrnts h2 {
+  margin-bottom: 15px;
+}
 .rstrnts_cardpadding {
   width: 100%;
   padding: 10px 20px;
@@ -101,11 +158,35 @@ h2 {
   border-radius: 15px;
   box-shadow: 0px 4px 15px #dddddd;
 }
+.card .img--center {
+  object-position: 100% 62%;
+}
 .card img {
   width: 100%;
   height: 180px;
   border-radius: 15px 15px 0px 0px;
   object-fit: cover;
+  object-position: bottom;
+}
+.card_txt {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 20px 10px 10px;
+}
+.card i {
+  font-size: 25px;
+  padding-top: 10px;
+}
+
+h3 {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+h3 + p {
+  margin: 0;
+  line-height: 1.7;
 }
 
 /*# sourceMappingURL=accueil.css.map */

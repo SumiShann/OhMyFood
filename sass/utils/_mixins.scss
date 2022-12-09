@@ -11,7 +11,7 @@
     box-shadow: $shadow darken($parent-bg-clr, $percent);
 }
 
-@mixin btn ($shadow, $percent){
+@mixin btn ($shadow: $order-btn-shadow, $percent: 35%){
     color: $white;
     border: none;
     @include card ($shadow, $percent, $color: $gradient, $radius: $btn-radius);

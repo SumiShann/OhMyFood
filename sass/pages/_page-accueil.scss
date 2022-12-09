@@ -41,20 +41,88 @@ h2{
     }
 }
 
+.expl{
+    height: 445px;
+    padding: 50px 0px 55px 0px;
+    ul{
+        padding: 0%;
+        display: flex;
+        flex-direction: column;
+        li{
+            padding: 13px 20px 13px 35px;
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+.step{
+    @include card ($stepcard-shadow, 15%, $color-bg, $white, 20px);
+    @include txt-typography(step);
+    height: 72px;
+    display: flex;
+    align-items: center;
+    &_number{
+        padding: 5px 10px;
+        border-radius: 50%;
+        background-color: $color-primary;
+        color: $color-bg;
+        position: relative;
+        right: 15px;
+    }
+    &-txt--margin{
+        margin-left: 4px;
+    }
+    i{
+        color: $color-i-step;
+        font-size: 17px;
+        padding: 0px 22px 0px 8px;
+    }
+}
+
+
 .rstrnts{
+    background-color: $color-bg;
+    padding: 50px 0px;
+    h2{
+        margin-bottom: 15px;
+    }
     &_cardpadding{
         width: 100%;
         padding: 10px 20px;
     }
 }
+
 .card{
     width: 100%;
     height: 251px;
     @include card;
+    .img--center{
+        object-position: 100% 62%;
+    }
     img{
         width: 100%;
         height: 180px;
         border-radius: 15px 15px 0px 0px;
         object-fit: cover;
+        object-position: bottom;
+    }
+    &_txt{
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 20px 10px 10px;
+    }
+    i{
+        font-size: 25px;
+        padding-top: 10px;
+    }
+}
+
+h3{
+    margin: 0;
+    @include txt-typography(home-h3);
+    + p{
+        margin: 0;
+        line-height: 1.7;
     }
 }
