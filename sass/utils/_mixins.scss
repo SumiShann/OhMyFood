@@ -17,3 +17,13 @@
     @include card ($shadow, $percent, $color: $gradient, $radius: $btn-radius);
     @include txt-typography(button);
 }
+
+@mixin widget (){
+    color: $color-new;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 2px;
+    box-shadow: $widget-new-shadow darken($white, 15%);
+    background-color: $color-accent;
+}

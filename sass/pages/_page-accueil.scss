@@ -97,6 +97,18 @@ h2{
     width: 100%;
     height: 251px;
     @include card;
+    display: flex;
+    flex-direction: column;
+    &_img-content{
+        position: relative;
+        text-align: center;
+        &_new{
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            @include widget();
+        }
+    }
     .img--center{
         object-position: 100% 62%;
     }

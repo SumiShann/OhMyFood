@@ -1,6 +1,7 @@
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
+$color-accent: #99E2D0;
 $gradient: linear-gradient(to bottom right, $color-secondary, $color-primary);
 $white: #FFFF;
 $color-bg: #F6F6F6;
@@ -10,9 +11,12 @@ $color-txt: #353535;
 $color-i-step: #7E7E7E;
 $color-a: #0000;
 
+$color-new: #008766;
+
 $stepcard-shadow: 0px 4px 15px;
 $explore-btn-shadow: 0px 4px 10px;
 $order-btn-shadow: 0px 4px 15px;
+$widget-new-shadow: 0px 2px 2px;
 
 $normal-txt: 'Roboto', sans-serif;
 $title-txt: 'Shrikhand', cursive;
