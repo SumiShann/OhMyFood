@@ -3,10 +3,31 @@ footer{
     background-color: $color-bg-footer;
     height: 197px;
     width: 100%;
+    padding: 20px 25px;
     h4{
         margin: 0;
         font-family: 'Shrikhand', cursive;
         font-size: 18px;
         font-weight: 400;
+    }
+    ul{
+        list-style-type: none;
+        padding-left: 0;
+        li{
+            line-height: 1.7;
+        }
+    }
+    &_iconline{
+        @include txt-typography(location);
+        .fa-utensils{
+            padding-right: 10px;
+        }
+        .fa-handshake-angle{
+            padding-right: 9px;
+        }
+    }
+    a{
+        text-decoration: none;
+        color: $white;
     }
 }

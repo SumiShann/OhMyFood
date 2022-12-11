@@ -13,7 +13,7 @@
     }
 }
 
-h2{
+h1, h2{
     @include txt-typography(home-h2);
     margin: 0;
     padding: 0 20px;
@@ -104,8 +104,8 @@ h2{
         text-align: center;
         &_new{
             position: absolute;
-            top: 14px;
-            right: 16px;
+            top: 15px;
+            right: 15px;
             @include widget();
         }
     }
