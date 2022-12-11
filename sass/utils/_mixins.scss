@@ -14,6 +14,7 @@
 @mixin btn ($shadow: $order-btn-shadow, $percent: 35%){
     color: $white;
     border: none;
+    padding: $btn-height 0;
     @include card ($shadow, $percent, $color: $gradient, $radius: $btn-radius);
     @include txt-typography(button);
 }

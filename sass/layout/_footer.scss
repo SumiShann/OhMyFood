@@ -13,21 +13,27 @@ footer{
     ul{
         list-style-type: none;
         padding-left: 0;
+        font-weight: 400;
+        font-size: 16px;
         li{
             line-height: 1.7;
         }
     }
-    &_iconline{
+    .footer_iconline{
         @include txt-typography(location);
-        .fa-utensils{
-            padding-right: 10px;
-        }
-        .fa-handshake-angle{
-            padding-right: 9px;
-        }
+        display: flex;
+        flex-direction: row;
     }
     a{
         text-decoration: none;
         color: $white;
     }
+    .icon-width{
+        width: 25px;
+    }
+
+    i{
+        font-size: 13px;
+    }
 }
+

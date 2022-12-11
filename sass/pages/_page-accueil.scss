@@ -36,7 +36,6 @@ h1, h2{
     &_btn{
         @include btn($explore-btn-shadow, 25%);
         width: 70%;
-        padding: $btn-height 0;
         margin-bottom: 20px;
     }
 }
@@ -70,15 +69,16 @@ h1, h2{
         position: relative;
         right: 15px;
     }
-    &-txt--margin{
-        margin-left: 4px;
-    }
     i{
         color: $color-i-step;
         font-size: 17px;
-        padding: 0px 22px 0px 8px;
+        margin-left: 8px;
+    }
+    .icon-width{
+        width: 45px;
     }
 }
+
 
 
 .rstrnts{

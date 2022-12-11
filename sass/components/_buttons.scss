@@ -1,4 +1,4 @@
-{
-    color: $white;
-    @include txt-typography(button);
+button{
+    @include btn;
+    width: 50%;
 }
