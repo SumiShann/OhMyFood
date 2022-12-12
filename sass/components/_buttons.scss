@@ -1,4 +1,9 @@
-button{
-    @include btn;
-    width: 50%;
+
+.btn{
+    display: flex;
+    justify-content: center;
+    &-order{
+        @include btn;
+        width: 50%;
+    }
 }

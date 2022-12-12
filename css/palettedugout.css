@@ -24,11 +24,15 @@ main {
 }
 
 img {
-  width: 100;
+  width: 100%;
   height: 275px;
 }
 
-button {
+.btn {
+  display: flex;
+  justify-content: center;
+}
+.btn-order {
   color: white;
   border: none;
   padding: 15px 0;
@@ -91,6 +95,90 @@ footer .icon-width {
 }
 footer i {
   font-size: 13px;
+}
+
+.menu {
+  height: 1350px;
+}
+
+section {
+  background-color: #F6F6F6;
+  border-radius: 40px 40px 0px 0px;
+  position: absolute;
+  width: 100%;
+  top: 290px;
+  height: 1123px;
+  padding-top: 10px;
+}
+section .h2-underline {
+  margin: 4px 0px 12px 12px;
+  background-color: #99E2D0;
+  width: 40px;
+  height: 3px;
+}
+section article {
+  padding-bottom: 35px;
+}
+
+h1 {
+  padding: 0px 30px 0px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
+  font-size: 28px;
+}
+
+h2 {
+  padding-left: 12px;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+h3 {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+h3 + p {
+  margin: 0;
+  line-height: 1.8;
+  height: 2em;
+  width: 290px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardpadding {
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px #dddddd;
+  height: 68px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.card_price {
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: flex-end;
+  padding-right: 10px;
+}
+.card_price p {
+  margin: 2px;
 }
 
 /*# sourceMappingURL=palettedugout.css.map */
