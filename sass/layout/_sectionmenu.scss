@@ -68,8 +68,30 @@ h3{
         display: flex;
         align-items: flex-end;
         padding-right: 10px;
+        opacity: 1;
         p{
             margin: 2px;
         }
+        &:active{
+            opacity: 0;
+            & + .check{
+                opacity: 1;
+                transform: scaleX(1);
+            }
+
+        }
     }
+}
+
+.check{
+    width: 59px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: $white;
+    opacity: 1;
+    transform-origin: right;
+    transform: scaleX(0);
+    background-color: $color-tertiary;
+    transition: opacity 1000ms transform 1000ms;
 }

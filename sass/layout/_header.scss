@@ -2,10 +2,18 @@ header{
     display: flex;
     justify-content: center;
     height: 63px;
+    align-items: flex-end;
+    padding-bottom: 14px;       
     img{
         width: 162px;
-        height: 44px;
-        align-self: flex-end;
-        padding-bottom: 14px;
+        height: 30px;
+    }
+    i{
+        color: $color-txt;
+        -webkit-text-stroke: 0.5px $color-txt;
+        font-size: 1.2rem;
+        position: absolute;
+        left: 25px;
+        top: 23px;
     }
 }

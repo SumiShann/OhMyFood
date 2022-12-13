@@ -49,12 +49,20 @@ header {
   display: flex;
   justify-content: center;
   height: 63px;
+  align-items: flex-end;
+  padding-bottom: 14px;
 }
 header img {
   width: 162px;
-  height: 44px;
-  align-self: flex-end;
-  padding-bottom: 14px;
+  height: 30px;
+}
+header i {
+  color: #353535;
+  -webkit-text-stroke: 0.5px #353535;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 25px;
+  top: 23px;
 }
 
 footer {
@@ -176,9 +184,30 @@ h3 + p {
   display: flex;
   align-items: flex-end;
   padding-right: 10px;
+  opacity: 1;
 }
 .card_price p {
   margin: 2px;
+}
+.card_price:active {
+  opacity: 0;
+}
+.card_price:active + .check {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.check {
+  width: 59px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: white;
+  opacity: 1;
+  transform-origin: right;
+  transform: scaleX(0);
+  background-color: #99E2D0;
+  transition: opacity 400ms transform 400ms;
 }
 
 /*# sourceMappingURL=palettedugout.css.map */
