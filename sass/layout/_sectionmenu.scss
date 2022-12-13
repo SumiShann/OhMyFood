@@ -1,14 +1,9 @@
-.menu{
-    height: 1350px;
-}
-
 section{
     background-color: $color-bg;
     border-radius: 40px 40px 0px 0px;
     position: absolute;
     width: 100%;
     top: 290px;
-    height: 1123px;
     padding-top: 10px;
     .h2-underline{
         margin: 4px 0px 12px 12px;
@@ -69,6 +64,7 @@ h3{
         align-items: flex-end;
         padding-right: 10px;
         opacity: 1;
+        z-index: 0;
         p{
             margin: 2px;
         }
@@ -81,17 +77,18 @@ h3{
 
         }
     }
+    .check{
+        width: 59px;
+        display: flex;
+        align-items: center;
+        height: 68px;
+        border-radius: 0px 25px 25px 0px;
+        color: $white;
+        opacity: 1;
+        transform-origin: right;
+        transform: scaleX(0);
+        background-color: $color-tertiary;
+        transition: transform 1000ms opacity 1000ms;
+    }
 }
 
-.check{
-    width: 59px;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    color: $white;
-    opacity: 1;
-    transform-origin: right;
-    transform: scaleX(0);
-    background-color: $color-tertiary;
-    transition: opacity 1000ms transform 1000ms;
-}
