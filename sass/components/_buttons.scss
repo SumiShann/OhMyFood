@@ -1,6 +1,7 @@
 .btn{
     display: flex;
     justify-content: center;
+    color: blue;
     &-order{
         @include btn;
         width: 50%;
