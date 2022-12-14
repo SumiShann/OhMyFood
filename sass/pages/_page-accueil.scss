@@ -33,11 +33,6 @@ h1, h2{
         font-size: 18px;
         color: $color-txt;
     }
-    &_btn{
-        @include btn($explore-btn-shadow, 25%);
-        width: 70%;
-        margin-bottom: 20px;
-    }
 }
 
 .expl{
@@ -56,11 +51,13 @@ h1, h2{
 }
 
 .step{
-    @include card ($stepcard-shadow, 15%, $color-bg, $white, 20px);
+    @include card ($stepcard-shadow, 15%, $color-bg, $white, $step-radius);
     @include txt-typography(step);
     height: 72px;
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 1;
     &_number{
         padding: 5px 10px;
         border-radius: 50%;
@@ -71,11 +68,36 @@ h1, h2{
     }
     i{
         color: $color-i-step;
+        transition: color 250ms;
         font-size: 17px;
         margin-left: 8px;
     }
     .icon-width{
         width: 45px;
+    }
+    &:hover,
+    &:active{
+        &::after{
+            opacity: 1;
+        }
+        i{
+            color: $color-primary;
+        }
+
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background-color: lighten($color-primary, 34%);
+        border-radius: $step-radius;
+        opacity: 0;
+        transition: opacity 250ms;
+
     }
 }
 
@@ -99,6 +121,7 @@ h1, h2{
     @include card;
     display: flex;
     flex-direction: column;
+    color: black;
     &_img-content{
         position: relative;
         text-align: center;

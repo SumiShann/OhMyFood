@@ -4,8 +4,11 @@
 
 @import "./base/base";
 
+@import "./components/imgmenu";
 @import "./components/buttons";
 
 @import "./layout/header";
 @import "./layout/footer";
 @import "./layout/sectionmenu";
+
+@import "./pages/page-palettedugout";

@@ -11,11 +11,11 @@
     box-shadow: $shadow darken($parent-bg-clr, $percent);
 }
 
-@mixin btn ($shadow: $order-btn-shadow, $percent: 35%){
+@mixin btn (){
     color: $white;
     border: none;
     padding: $btn-height 0;
-    @include card ($shadow, $percent, $color: $gradient, $radius: $btn-radius);
+    @include card ($shadow: $btn-shadow, $percent: 25%, $color: $gradient, $radius: $btn-radius);
     @include txt-typography(button);
 }
 

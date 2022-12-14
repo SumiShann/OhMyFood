@@ -32,26 +32,39 @@ main {
   flex-direction: column;
 }
 
+main {
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 210px;
+}
+
 .btn {
   display: flex;
   justify-content: center;
 }
+.btn-intro {
+  width: 70%;
+  margin-bottom: 20px;
+}
 .btn-order {
+  width: 50%;
+}
+.btn-order, .btn-intro {
   color: white;
   border: none;
   padding: 15px 0;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border-radius: 25px;
-  box-shadow: 0px 4px 15px #9d9d9d;
+  box-shadow: 0px 4px 10px #b6b6b6;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  width: 50%;
   opacity: 1;
-  transition: opacity 250ms;
+  transition: opacity 1450ms box-shadow 1450ms;
 }
-.btn-order:active {
+.btn-order:active, .btn-order:hover, .btn-intro:active, .btn-intro:hover {
   opacity: 0.8;
+  box-shadow: 0px 4px 15px #9d9d9d;
 }
 
 header {
@@ -113,13 +126,6 @@ footer .icon-width {
 }
 footer i {
   font-size: 13px;
-}
-
-main {
-  background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding-top: 210px;
 }
 
 section {
@@ -197,7 +203,7 @@ h3 + p {
   align-items: flex-end;
   padding-right: 10px;
   opacity: 1;
-  z-index: 0;
+  z-index: 1;
 }
 .card_price p {
   margin: 2px;
@@ -213,14 +219,19 @@ h3 + p {
   width: 59px;
   display: flex;
   align-items: center;
-  height: 68px;
+  height: 69px;
   border-radius: 0px 25px 25px 0px;
   color: white;
-  opacity: 1;
+  opacity: 0;
+  z-index: -1;
   transform-origin: right;
   transform: scaleX(0);
   background-color: #99E2D0;
-  transition: transform 1000ms opacity 1000ms;
+  transition: transform 2000ms opacity 1000ms;
+}
+
+main {
+  background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
 }
 
 /*# sourceMappingURL=palettedugout.css.map */
