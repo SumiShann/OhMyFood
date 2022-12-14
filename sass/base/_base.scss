@@ -1,8 +1,5 @@
 html{
-    position: relative;
-    min-height: 100%; 
     height: 100%;
-    padding-bottom: 197px;
 }
 
 *{
@@ -18,6 +15,8 @@ body{
 .container{
     max-width: 1440px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 a{
@@ -29,5 +28,6 @@ a{
 
 main{
     margin: 0;
-
+    display: flex;
+    flex-direction: column;
 }
