@@ -5,17 +5,17 @@
     font-size: map-get($map: $typography, $key: size);
 }
 
-@mixin card ($shadow: $stepcard-shadow, $percent: 10%, $color: $white, $parent-bg-clr: $color-bg, $radius: 15px){
+@mixin card ($radius: 15px, $color: $white){
     background: $color;
     border-radius: $radius;
-    box-shadow: $shadow darken($parent-bg-clr, $percent);
 }
 
 @mixin btn (){
     color: $white;
     border: none;
     padding: $btn-height 0;
-    @include card ($shadow: $btn-shadow, $percent: 25%, $color: $gradient, $radius: $btn-radius);
+    box-shadow: $btn-shadow darken($color-bg, 25%);
+    @include card ($color: $gradient, $radius: $btn-radius);
     @include txt-typography(button);
 }
 
@@ -27,4 +27,16 @@
     border-radius: 2px;
     box-shadow: $widget-new-shadow darken($white, 15%);
     background-color: $color-tertiary;
+}
+
+@mixin tablet {
+    @media screen and (min-device-width: 768px){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media all and (min-device-width: 992px){
+        @content;
+    }
 }

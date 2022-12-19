@@ -53,18 +53,30 @@ main {
   color: white;
   border: none;
   padding: 15px 0;
+  box-shadow: 0px 4px 10px #b6b6b6;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border-radius: 25px;
-  box-shadow: 0px 4px 10px #b6b6b6;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
   opacity: 1;
-  transition: opacity 1450ms box-shadow 1450ms;
+  transition: opacity 350ms, box-shadow 350ms;
 }
 .btn-order:active, .btn-order:hover, .btn-intro:active, .btn-intro:hover {
   opacity: 0.8;
   box-shadow: 0px 4px 15px #9d9d9d;
+}
+
+.heart_full {
+  opacity: 1;
+  background: transparent;
+  background-image: none;
+  stroke: black;
+  stroke-width: 1px;
+  transition: background-image 1000ms;
+}
+.heart_full:active {
+  background-image: initial;
 }
 
 header {
@@ -135,6 +147,8 @@ section {
   padding-top: 10px;
   padding-bottom: 50px;
   flex: 1;
+  position: relative; /*pour que .check ne passe pas sous le background*/
+  z-index: 0;
 }
 section .h2-underline {
   margin: 4px 0px 12px 12px;
@@ -170,15 +184,21 @@ h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 18px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: width 300ms ease-out;
 }
 h3 + p {
   margin: 0;
   line-height: 1.8;
   height: 2em;
-  width: 290px;
+  width: 96%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  transition: width 300ms ease-out;
 }
 
 .cardpadding {
@@ -186,15 +206,31 @@ h3 + p {
   padding: 5px 10px;
 }
 
+.cardshadow {
+  width: 100%;
+  background-color: transparent;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px #dddddd;
+  position: relative;
+}
+
 .card {
   background: white;
   border-radius: 15px;
-  box-shadow: 0px 4px 15px #dddddd;
   height: 68px;
   width: 100%;
   display: flex;
+  transition: width 300ms ease-out;
+}
+.card_content {
+  display: flex;
   justify-content: space-between;
   padding: 10px;
+  width: 100%;
+  margin: 0;
+}
+.card_dish {
+  width: 88%;
 }
 .card_price {
   font-weight: 700;
@@ -202,32 +238,47 @@ h3 + p {
   display: flex;
   align-items: flex-end;
   padding-right: 10px;
-  opacity: 1;
-  z-index: 1;
 }
 .card_price p {
   margin: 2px;
 }
-.card_price:active {
-  opacity: 0;
-}
-.card_price:active + .check {
-  opacity: 1;
-  transform: scaleX(1);
-}
 .card .check {
-  width: 59px;
+  width: 59px; /*59px*/
   display: flex;
   align-items: center;
-  height: 69px;
-  border-radius: 0px 25px 25px 0px;
+  justify-content: center;
+  height: 68px;
+  border-radius: 0px 15px 15px 0px;
   color: white;
-  opacity: 0;
+  position: absolute;
+  right: 0px;
   z-index: -1;
-  transform-origin: right;
-  transform: scaleX(0);
   background-color: #99E2D0;
-  transition: transform 2000ms opacity 1000ms;
+}
+.card .check i {
+  font-size: 1.4rem;
+}
+
+.choice {
+  appearance: none;
+  height: 68px;
+  width: 100%;
+  margin: 0px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+}
+.choice:checked + .card {
+  width: calc(100% - 59px);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.choice:checked + .card h3, .choice:checked + .card h3 + p {
+  width: 90%;
 }
 
 main {

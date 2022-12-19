@@ -1,0 +1,13 @@
+.heart{
+    &_full{
+        opacity: 1;
+        background: transparent;
+        background-image: none;
+        stroke: black;
+        stroke-width: 1px;
+        transition: background-image 1000ms;
+        &:active{
+            background-image: initial;
+        }
+    }
+}
