@@ -67,16 +67,48 @@ main {
   box-shadow: 0px 4px 15px #9d9d9d;
 }
 
-.heart_full {
-  opacity: 1;
-  background: transparent;
-  background-image: none;
-  stroke: black;
-  stroke-width: 1px;
-  transition: background-image 1000ms;
+.heart-container {
+  position: relative;
+  width: 10%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  clip-path: url(#svgClip);
 }
-.heart_full:active {
-  background-image: initial;
+
+.heart-clip {
+  appearance: none;
+  margin: 0px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  overflow: hidden;
+  z-index: 2;
+}
+.heart-clip + .fill {
+  transform: translateY(50%);
+  width: 200%;
+  aspect-ratio: 1/1;
+  transition: transform 700ms ease-out;
+}
+.heart-clip:checked + .fill {
+  transform: translateY(0);
+}
+
+.heart-stroke {
+  width: calc(100% - 4px);
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  fill: transparent;
+  stroke: #101010;
+  stroke-width: 2px;
+}
+
+.gradient {
+  fill: url(#my-cool-gradient);
 }
 
 header {
