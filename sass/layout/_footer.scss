@@ -5,6 +5,16 @@ footer{
     width: 100%;
     padding: 20px 25px;
     flex-shrink: 0;
+    @include tablet{
+        height: 114px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: 20px 35px;
+    }
+    @include desktop{
+        padding: 20px 100px;
+    }
     h4{
         margin: 0;
         font-family: 'Shrikhand', cursive;
@@ -16,10 +26,24 @@ footer{
         padding-left: 0;
         font-weight: 400;
         font-size: 16px;
+        @include tablet{
+            display: flex;
+            margin-right: 10px;
+        }
+        @include desktop{
+            margin-right: 30px;
+        }
         li{
             line-height: 1.7;
+            @include tablet{
+                margin-right: 30px;
+            }
+            @include desktop{
+                margin-right: 50px;
+            }
         }
     }
+    
     .footer_iconline{
         @include txt-typography(location);
         display: flex;

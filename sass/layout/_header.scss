@@ -3,7 +3,12 @@ header{
     justify-content: center;
     height: 63px;
     align-items: flex-end;
-    padding-bottom: 14px;       
+    padding-bottom: 14px;
+    @include desktop{
+        height: 96px;
+        align-items: center;
+        padding-bottom: 0;
+    }    
     img{
         width: 162px;
         height: 30px;

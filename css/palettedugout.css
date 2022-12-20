@@ -42,10 +42,6 @@ main {
   display: flex;
   justify-content: center;
 }
-.btn-intro {
-  width: 70%;
-  margin-bottom: 20px;
-}
 .btn-order {
   width: 50%;
 }
@@ -65,6 +61,21 @@ main {
 .btn-order:active, .btn-order:hover, .btn-intro:active, .btn-intro:hover {
   opacity: 0.8;
   box-shadow: 0px 4px 15px #9d9d9d;
+}
+.btn-intro {
+  width: 70%;
+  margin-bottom: 20px;
+}
+@media screen and (min-device-width: 768px) {
+  .btn-intro {
+    width: 29%;
+    margin-bottom: 0;
+  }
+}
+@media all and (min-device-width: 992px) {
+  .btn-intro {
+    width: 18%;
+  }
 }
 
 .heart-container {
@@ -118,6 +129,13 @@ header {
   align-items: flex-end;
   padding-bottom: 14px;
 }
+@media all and (min-device-width: 992px) {
+  header {
+    height: 96px;
+    align-items: center;
+    padding-bottom: 0;
+  }
+}
 header img {
   width: 162px;
   height: 30px;
@@ -139,6 +157,20 @@ footer {
   padding: 20px 25px;
   flex-shrink: 0;
 }
+@media screen and (min-device-width: 768px) {
+  footer {
+    height: 114px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 20px 35px;
+  }
+}
+@media all and (min-device-width: 992px) {
+  footer {
+    padding: 20px 100px;
+  }
+}
 footer h4 {
   margin: 0;
   font-family: "Shrikhand", cursive;
@@ -151,8 +183,29 @@ footer ul {
   font-weight: 400;
   font-size: 16px;
 }
+@media screen and (min-device-width: 768px) {
+  footer ul {
+    display: flex;
+    margin-right: 10px;
+  }
+}
+@media all and (min-device-width: 992px) {
+  footer ul {
+    margin-right: 30px;
+  }
+}
 footer ul li {
   line-height: 1.7;
+}
+@media screen and (min-device-width: 768px) {
+  footer ul li {
+    margin-right: 30px;
+  }
+}
+@media all and (min-device-width: 992px) {
+  footer ul li {
+    margin-right: 50px;
+  }
 }
 footer .footer_iconline {
   font-family: "Roboto", sans-serif;

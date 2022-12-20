@@ -1,10 +1,6 @@
 .btn{
     display: flex;
     justify-content: center;
-    &-intro{
-        width: 70%;
-        margin-bottom: 20px;
-    }
     &-order{
         width: 50%;
     }
@@ -17,6 +13,17 @@
         &:hover{
             opacity: 0.8;
             box-shadow: $hover-btn-shadow darken($color-bg, 35%);
+        }
+    }
+    &-intro{
+        width: 70%;
+        margin-bottom: 20px;
+        @include tablet{
+            width: 29%;
+            margin-bottom: 0;
+        }
+        @include desktop{
+            width: 18%;
         }
     }
 }
