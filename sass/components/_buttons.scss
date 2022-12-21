@@ -1,9 +1,6 @@
 .btn{
     display: flex;
     justify-content: center;
-    &-order{
-        width: 50%;
-    }
     &-order,
     &-intro{
         @include btn;
@@ -24,6 +21,12 @@
         }
         @include desktop{
             width: 18%;
+        }
+    }
+    &-order{
+        width: 50%;
+        @include tablet{
+            width: 27%;
         }
     }
 }

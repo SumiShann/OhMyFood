@@ -40,9 +40,6 @@ main {
   display: flex;
   justify-content: center;
 }
-.btn-order {
-  width: 50%;
-}
 .btn-order, .btn-intro {
   color: white;
   border: none;
@@ -73,6 +70,14 @@ main {
 @media all and (min-device-width: 992px) {
   .btn-intro {
     width: 18%;
+  }
+}
+.btn-order {
+  width: 50%;
+}
+@media screen and (min-device-width: 768px) {
+  .btn-order {
+    width: 27%;
   }
 }
 

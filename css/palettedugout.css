@@ -68,9 +68,6 @@ main {
   display: flex;
   justify-content: center;
 }
-.btn-order {
-  width: 50%;
-}
 .btn-order, .btn-intro {
   color: white;
   border: none;
@@ -101,6 +98,14 @@ main {
 @media all and (min-device-width: 992px) {
   .btn-intro {
     width: 18%;
+  }
+}
+.btn-order {
+  width: 50%;
+}
+@media screen and (min-device-width: 768px) {
+  .btn-order {
+    width: 27%;
   }
 }
 
@@ -277,9 +282,15 @@ section {
   z-index: 0;
   overflow-y: hidden;
 }
+@media screen and (min-device-width: 768px) {
+  section {
+    padding: 10px 70px 50px 70px;
+  }
+}
 @media all and (min-device-width: 992px) {
   section {
-    width: 1055px;
+    width: 60%;
+    padding: 10px 150px 50px 150px;
   }
 }
 section .h2-underline {
@@ -301,14 +312,6 @@ section article:nth-child(4) {
   animation: slideUp 2.2s ease forwards;
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(1000px);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
 h1 {
   padding: 0px 30px 0px 15px;
   display: flex;
@@ -317,6 +320,11 @@ h1 {
   font-family: "Shrikhand", cursive;
   font-weight: 400;
   font-size: 28px;
+}
+@media screen and (min-device-width: 768px) {
+  h1 {
+    justify-content: center;
+  }
 }
 
 h2 {
@@ -353,6 +361,11 @@ h3 + p {
 .cardpadding {
   width: 100%;
   padding: 5px 10px;
+}
+@media screen and (min-device-width: 768px) {
+  .cardpadding {
+    padding: 7px 10px;
+  }
 }
 
 .cardshadow {

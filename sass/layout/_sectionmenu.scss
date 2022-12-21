@@ -8,8 +8,12 @@ section{
     position: relative; /*pour que .check ne passe pas sous le background*/
     z-index: 0;
     overflow-y: hidden;
+    @include tablet{
+        padding: 10px 70px 50px 70px;
+    }
     @include desktop{
-        width: 1055px;
+        width: 60%;
+        padding: 10px 150px 50px 150px;
     }
     .h2-underline{
         margin: 4px 0px 12px 12px;
@@ -32,21 +36,15 @@ section{
     
 }
 
-@keyframes slideUp{
-    from{
-        transform: translateY(1000px);
-    }
-    to{
-        transform: translateY(0);
-    }
-}
-
 h1{
     padding: 0px 30px 0px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     @include txt-typography(menu-h1);
+    @include tablet{
+        justify-content: center;
+    }
 }
 
 h2{
@@ -79,6 +77,9 @@ h3{
 .cardpadding{
     width: 100%;
     padding: 5px 10px;
+    @include tablet{
+        padding: 7px 10px;
+    }
 }
 
 .cardshadow{
