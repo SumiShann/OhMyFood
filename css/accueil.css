@@ -15,8 +15,7 @@ body {
 }
 
 .container {
-  max-width: 1440px;
-  margin: auto;
+  margin: 0;
   display: flex;
   flex-direction: column;
 }
@@ -30,8 +29,10 @@ a:visited {
 
 main {
   margin: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 /*components*/
@@ -127,7 +128,7 @@ header {
   align-items: flex-end;
   padding-bottom: 14px;
 }
-@media all and (min-device-width: 992px) {
+@media screen and (min-device-width: 768px) {
   header {
     height: 96px;
     align-items: center;
@@ -145,6 +146,13 @@ header i {
   position: absolute;
   left: 25px;
   top: 23px;
+}
+@media screen and (min-device-width: 768px) {
+  header i {
+    font-size: 1.6rem;
+    left: 50px;
+    top: 35px;
+  }
 }
 
 footer {

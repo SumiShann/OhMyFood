@@ -13,8 +13,7 @@ body {
 }
 
 .container {
-  max-width: 1440px;
-  margin: auto;
+  margin: 0;
   display: flex;
   flex-direction: column;
 }
@@ -28,14 +27,41 @@ a:visited {
 
 main {
   margin: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-main {
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding-top: 210px;
+.image {
+  height: 210px;
+  width: 100%;
+}
+@media screen and (min-device-width: 768px) {
+  .image {
+    height: 300px;
+  }
+}
+@media all and (min-device-width: 992px) {
+  .image {
+    height: 410px;
+  }
+}
+.image img {
+  object-fit: cover;
+  width: 100%;
+}
+@media screen and (min-device-width: 768px) {
+  .image img {
+    height: 440px;
+    object-position: 100% 100%;
+  }
+}
+@media all and (min-device-width: 992px) {
+  .image img {
+    height: 550px;
+    object-position: 100% 60%;
+  }
 }
 
 .btn {
@@ -122,6 +148,14 @@ main {
   fill: url(#my-cool-gradient);
 }
 
+@keyframes slideUp {
+  from {
+    transform: translateY(1000px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 header {
   display: flex;
   justify-content: center;
@@ -129,7 +163,7 @@ header {
   align-items: flex-end;
   padding-bottom: 14px;
 }
-@media all and (min-device-width: 992px) {
+@media screen and (min-device-width: 768px) {
   header {
     height: 96px;
     align-items: center;
@@ -147,6 +181,13 @@ header i {
   position: absolute;
   left: 25px;
   top: 23px;
+}
+@media screen and (min-device-width: 768px) {
+  header i {
+    font-size: 1.6rem;
+    left: 50px;
+    top: 35px;
+  }
 }
 
 footer {
@@ -234,6 +275,12 @@ section {
   flex: 1;
   position: relative; /*pour que .check ne passe pas sous le background*/
   z-index: 0;
+  overflow-y: hidden;
+}
+@media all and (min-device-width: 992px) {
+  section {
+    width: 1055px;
+  }
 }
 section .h2-underline {
   margin: 4px 0px 12px 12px;
@@ -244,7 +291,24 @@ section .h2-underline {
 section article {
   padding-bottom: 35px;
 }
+section article:nth-child(2) {
+  animation: slideUp 1.2s ease forwards;
+}
+section article:nth-child(3) {
+  animation: slideUp 1.7s ease forwards;
+}
+section article:nth-child(4) {
+  animation: slideUp 2.2s ease forwards;
+}
 
+@keyframes slideUp {
+  from {
+    transform: translateY(1000px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
 h1 {
   padding: 0px 30px 0px 15px;
   display: flex;
@@ -364,10 +428,6 @@ h3 + p {
 }
 .choice:checked + .card h3, .choice:checked + .card h3 + p {
   width: 90%;
-}
-
-main {
-  background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
 }
 
 /*# sourceMappingURL=palettedugout.css.map */

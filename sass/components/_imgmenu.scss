@@ -1,5 +1,22 @@
-main{
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding-top: 210px;
+.image{
+    height: 210px;
+    width: 100%;
+    @include tablet{
+        height: 300px;
+    }
+    @include desktop{
+        height: 410px;
+    }
+    img{
+    object-fit: cover;
+    width: 100%;
+    @include tablet{
+        height: 440px;
+        object-position: 100% 100%;
+    }
+    @include desktop{
+        height: 550px;
+        object-position: 100% 60%;
+    }
+    }
 }
