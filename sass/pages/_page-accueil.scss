@@ -1,3 +1,6 @@
+.start{
+    width: 100%;
+}
 .location{
     height: 50px;
     background-color: #EAEAEA;
@@ -50,6 +53,7 @@ h1{
 .expl{
     height: 445px;
     padding: 50px 0px 55px 0px;
+    width: 100%;
     @include tablet{
         height: 262px;
     }
@@ -185,11 +189,10 @@ h1{
     &_txt{
         display: flex;
         justify-content: space-between;
-        padding: 8px 20px 10px 10px;
+        padding: 10px 20px 10px 10px;
     }
-    i{
-        font-size: 25px;
-        padding-top: 10px;
+    svg{
+        margin-top: 10px;
     }
 }
 

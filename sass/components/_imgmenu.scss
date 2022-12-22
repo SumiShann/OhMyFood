@@ -7,16 +7,26 @@
     @include desktop{
         height: 410px;
     }
+    .img--center{
+        height: 369px;
+        object-position: 100% 100%;
+        @include tablet{
+            height: 440px;
+            object-position: 100% 70%;
+        }
+    }
     img{
     object-fit: cover;
     width: 100%;
-    @include tablet{
-        height: 440px;
-        object-position: 100% 100%;
+        @include tablet{
+            height: 440px;
+            object-position: 100% 100%;
+        }
     }
-    @include desktop{
-        height: 550px;
-        object-position: 100% 60%;
-    }
+    img, .img--center{
+        @include desktop{
+            height: 550px;
+            object-position: 100% 60%;
+        }
     }
 }

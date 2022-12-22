@@ -1,9 +1,5 @@
 /*utils*/
 /*base*/
-html {
-  height: 100%;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -11,7 +7,6 @@ html {
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  height: 100%;
 }
 
 .container {
@@ -81,15 +76,23 @@ main {
   }
 }
 
-.heart-container {
+.heart {
   position: relative;
-  width: 10%;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  clip-path: url(#svgClip);
+  display: flex;
+  align-items: inherit;
+  width: 23px;
+  height: 23px;
+  margin-left: 30px;
 }
-
-.heart-clip {
+.heart_empty {
+  position: absolute;
+  z-index: 0;
+}
+.heart_full {
+  position: absolute;
+  z-index: 1;
+}
+.heart_fill {
   appearance: none;
   margin: 0px;
   top: 0;
@@ -97,32 +100,15 @@ main {
   left: 0;
   right: 0;
   position: absolute;
-  overflow: hidden;
   z-index: 2;
 }
-.heart-clip + .fill {
-  transform: translateY(50%);
-  width: 200%;
-  aspect-ratio: 1/1;
-  transition: transform 700ms ease-out;
+.heart_fill + .heart_full {
+  transform-origin: bottom;
+  transform: scale(0);
+  transition: transform 700ms ease-in-out;
 }
-.heart-clip:checked + .fill {
-  transform: translateY(0);
-}
-
-.heart-stroke {
-  width: calc(100% - 4px);
-  aspect-ratio: 1/1;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  fill: transparent;
-  stroke: #101010;
-  stroke-width: 2px;
-}
-
-.gradient {
-  fill: url(#my-cool-gradient);
+.heart_fill:checked + .heart_full {
+  transform: scale(1);
 }
 
 /*layout*/
@@ -237,6 +223,10 @@ footer i {
 }
 
 /*page*/
+.start {
+  width: 100%;
+}
+
 .location {
   height: 50px;
   background-color: #EAEAEA;
@@ -297,6 +287,7 @@ h1, h2 {
 .expl {
   height: 445px;
   padding: 50px 0px 55px 0px;
+  width: 100%;
 }
 @media screen and (min-device-width: 768px) {
   .expl {
@@ -453,11 +444,10 @@ h1, h2 {
 .card_txt {
   display: flex;
   justify-content: space-between;
-  padding: 8px 20px 10px 10px;
+  padding: 10px 20px 10px 10px;
 }
-.card i {
-  font-size: 25px;
-  padding-top: 10px;
+.card svg {
+  margin-top: 10px;
 }
 
 h3 {

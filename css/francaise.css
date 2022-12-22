@@ -1,7 +1,4 @@
-html {
-  height: 100%;
-}
-
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -9,7 +6,6 @@ html {
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  height: 100%;
 }
 
 .container {
@@ -47,6 +43,16 @@ main {
     height: 410px;
   }
 }
+.image .img--center {
+  height: 369px;
+  object-position: 100% 100%;
+}
+@media screen and (min-device-width: 768px) {
+  .image .img--center {
+    height: 440px;
+    object-position: 100% 70%;
+  }
+}
 .image img {
   object-fit: cover;
   width: 100%;
@@ -58,7 +64,7 @@ main {
   }
 }
 @media all and (min-device-width: 992px) {
-  .image img {
+  .image img, .image .img--center {
     height: 550px;
     object-position: 100% 60%;
   }
@@ -109,15 +115,23 @@ main {
   }
 }
 
-.heart-container {
+.heart {
   position: relative;
-  width: 10%;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  clip-path: url(#svgClip);
+  display: flex;
+  align-items: inherit;
+  width: 23px;
+  height: 23px;
+  margin-left: 30px;
 }
-
-.heart-clip {
+.heart_empty {
+  position: absolute;
+  z-index: 0;
+}
+.heart_full {
+  position: absolute;
+  z-index: 1;
+}
+.heart_fill {
   appearance: none;
   margin: 0px;
   top: 0;
@@ -125,32 +139,15 @@ main {
   left: 0;
   right: 0;
   position: absolute;
-  overflow: hidden;
   z-index: 2;
 }
-.heart-clip + .fill {
-  transform: translateY(50%);
-  width: 200%;
-  aspect-ratio: 1/1;
-  transition: transform 700ms ease-out;
+.heart_fill + .heart_full {
+  transform-origin: bottom;
+  transform: scale(0);
+  transition: transform 700ms ease-in-out;
 }
-.heart-clip:checked + .fill {
-  transform: translateY(0);
-}
-
-.heart-stroke {
-  width: calc(100% - 4px);
-  aspect-ratio: 1/1;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  fill: transparent;
-  stroke: #101010;
-  stroke-width: 2px;
-}
-
-.gradient {
-  fill: url(#my-cool-gradient);
+.heart_fill:checked + .heart_full {
+  transform: scale(1);
 }
 
 @keyframes slideUp {
@@ -290,7 +287,7 @@ section {
 @media all and (min-device-width: 992px) {
   section {
     width: 60%;
-    padding: 10px 150px 50px 150px;
+    padding: 10px 100px 50px 100px;
   }
 }
 section .h2-underline {
@@ -303,13 +300,13 @@ section article {
   padding-bottom: 35px;
 }
 section article:nth-child(2) {
-  animation: slideUp 1.2s ease forwards;
+  animation: slideUp 1.4s ease forwards;
 }
 section article:nth-child(3) {
-  animation: slideUp 1.7s ease forwards;
+  animation: slideUp 1.9s ease forwards;
 }
 section article:nth-child(4) {
-  animation: slideUp 2.2s ease forwards;
+  animation: slideUp 2.4s ease forwards;
 }
 
 h1 {
@@ -324,6 +321,7 @@ h1 {
 @media screen and (min-device-width: 768px) {
   h1 {
     justify-content: center;
+    margin-bottom: 50px;
   }
 }
 
@@ -368,7 +366,7 @@ h3 + p {
   }
 }
 
-.cardshadow {
+.cardshadow { /*permet que l'ombre des cartes reste la même, qu'elles soient checked ou non*/
   width: 100%;
   background-color: transparent;
   border-radius: 15px;
@@ -379,10 +377,10 @@ h3 + p {
 .card {
   background: white;
   border-radius: 15px;
-  height: 68px;
+  height: 68px; /*68px*/
   width: 100%;
   display: flex;
-  transition: width 300ms ease-out;
+  transition: width 300ms ease-out; /*réduit la largeur de la carte quand le plat est choisi*/
 }
 .card_content {
   display: flex;

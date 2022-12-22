@@ -13,7 +13,7 @@ section{
     }
     @include desktop{
         width: 60%;
-        padding: 10px 150px 50px 150px;
+        padding: 10px 100px 50px 100px;
     }
     .h2-underline{
         margin: 4px 0px 12px 12px;
@@ -24,13 +24,13 @@ section{
     article{
         padding-bottom: 35px;
         &:nth-child(2){
-            animation: slideUp 1.2s ease forwards;
+            animation: slideUp 1.4s ease forwards;
         }
         &:nth-child(3){
-            animation: slideUp 1.7s ease forwards;
+            animation: slideUp 1.9s ease forwards;
         }
         &:nth-child(4){
-            animation: slideUp 2.2s ease forwards;
+            animation: slideUp 2.4s ease forwards;
         }
     }
     
@@ -44,6 +44,7 @@ h1{
     @include txt-typography(menu-h1);
     @include tablet{
         justify-content: center;
+        margin-bottom: 50px;
     }
 }
 
@@ -82,20 +83,20 @@ h3{
     }
 }
 
-.cardshadow{
+.cardshadow{ /*permet que l'ombre des cartes reste la même, qu'elles soient checked ou non*/
     width: 100%;
     background-color: transparent;
     border-radius: 15px;
-    box-shadow: $stepcard-shadow darken($color-bg, 10%);
+    box-shadow: $stepcard-shadow darken($color-bg, 10%); 
     position: relative;
 }
 
 .card{
     @include card;
-    height: $height-cardcheck;
+    height: $height-cardcheck; /*68px*/
     width: 100%;
     display: flex;
-    transition: width 300ms ease-out;
+    transition: width 300ms ease-out; /*réduit la largeur de la carte quand le plat est choisi*/
     &_content{
         display: flex;
         justify-content: space-between;
