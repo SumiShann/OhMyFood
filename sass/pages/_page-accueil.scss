@@ -1,6 +1,7 @@
 .start{
     width: 100%;
 }
+
 .location{
     height: 50px;
     background-color: #EAEAEA;
@@ -10,7 +11,7 @@
     align-items: center;
     box-shadow: 0px 2px 4px inset darken(#EAEAEA, 10%);
     &_search{
-        width: 120px;
+        width: 120px; /*permet également à l'icon et text area d'être bien placés sous le logo*/
         border: none;
         background-color: transparent;
         color: $color-txt;
@@ -42,7 +43,7 @@ h1{
     padding: 35px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; /*sépare texte de bouton*/
     text-align: center;
     align-items: center;
     @include tablet{
@@ -76,7 +77,7 @@ h1{
             flex-direction: row;
         }
         li{
-            padding: 13px 20px 13px 35px;
+            padding: 13px 20px 13px 35px; /*padding-left est plus grand pour laisser de la place au nombre sur la bordure*/
             display: block;
             width: 100%;
         }
@@ -90,7 +91,7 @@ h1{
     height: 72px;
     display: flex;
     align-items: center;
-    position: relative;
+    position: relative; /*positionne carte au-dessus de pseudo-élément ::after*/
     z-index: 1;
     &_number{
         padding: 5px 10px;
@@ -98,7 +99,7 @@ h1{
         background-color: $color-primary;
         color: $color-bg;
         position: relative;
-        right: 15px;
+        right: 15px; /*décale nombre sur la bordure*/
     }
     i{
         color: $color-i-step;
@@ -121,7 +122,7 @@ h1{
         }
 
     }
-    &::after{
+    &::after{ /*pseudo-élément caché qui permet de changer couleur de la carte avec une transition, sans activer calcul de paint*/
         content: "";
         position: absolute;
         top: 0;
@@ -155,9 +156,9 @@ h1{
     }
     &_cardpadding{
         width: 100%;
-        padding: 10px 20px;
+        padding: 10px 20px; /*espace entre bord et carte mais aussi entre chaque carte*/
         @include tablet{
-            padding: 15px 20px;
+            padding: 15px 20px; /*augmente espace en haut et bas pour que .rstrnts_display ne coupe pas box-shadow*/
         }
     }
 }
@@ -174,25 +175,25 @@ h1{
     @include tablet{
         width: 335px;
     }
-    &_img-content{
+    &_img-content{ /*div et class créées pour positionner widget "Nouveau" sur l'image*/
         position: relative;
         text-align: center;
         &_new{
             position: absolute;
             top: 15px;
             right: 15px;
-            @include widget();
+            @include widget;
         }
     }
     .img--center{
-        object-position: 100% 62%;
+        object-position: 100% 62%; /*positionne image du restau la note enchantée au bon endroit*/
     }
     img{
         width: 100%;
         height: 180px;
         border-radius: 15px 15px 0px 0px;
         object-fit: cover;
-        object-position: bottom;
+        object-position: bottom; /*positionne les images correctement*/
     }
     &_txt{
         display: flex;

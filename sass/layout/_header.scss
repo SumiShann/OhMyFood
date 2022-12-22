@@ -13,9 +13,9 @@ header{
         width: 162px;
         height: 30px;
     }
-    i{
+    i{ /*flèche de retour disponible sur les pages des menus*/
         color: $color-txt;
-        -webkit-text-stroke: 0.5px $color-txt;
+        -webkit-text-stroke: 0.5px $color-txt; /*épaissit l'icône*/
         font-size: 1.2rem;
         position: absolute;
         left: 25px;

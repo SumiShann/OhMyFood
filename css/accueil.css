@@ -1,5 +1,11 @@
 @charset "UTF-8";
 /*utils*/
+/*couleur icône dans div.step*/
+/*couleur texte du widget "Nouveau"*/
+/*largeur coche verte*/
+/*hauteur carte des plats et coche verte*/
+/*ombre cartes restau et cartes plats*/
+/*durée du loader*/
 /*base*/
 * {
   box-sizing: border-box;
@@ -7,7 +13,7 @@
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 .container {
@@ -17,19 +23,19 @@ body {
   background-color: white; /*cache le loader une fois l'animation finie*/
 }
 
-a {
-  text-decoration: none;
-}
-a:visited {
-  color: rgba(0, 0, 0, 0);
-}
-
 main {
   margin: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /*display section menu au centre (visible sur desktop)*/
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: rgba(0, 0, 0, 0);
 }
 
 /*components*/
@@ -42,9 +48,10 @@ main {
   border: none;
   padding: 15px 0;
   box-shadow: 0px 4px 10px #b6b6b6;
+  /*pour cartes restau par défaut, mais aussi cartes plats, .step et btn*/
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border-radius: 25px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 500;
   font-size: 16px;
   opacity: 1;
@@ -81,8 +88,8 @@ main {
 .heart {
   position: relative;
   display: flex;
-  align-items: inherit;
-  width: 23px;
+  align-items: inherit; /*les deux svg seront toujours alignés avec le titre*/
+  width: 23px; /*sans width ni height, checkbox n'a aucune superficie*/
   height: 23px;
   margin-left: 30px;
 }
@@ -92,20 +99,20 @@ main {
 }
 .heart_full {
   position: absolute;
-  z-index: 1;
+  z-index: 1; /*le coeur coloré est par-dessus pour couvrir les bordures noires du coeur vide*/
 }
-.heart_fill {
-  appearance: none;
+.heart_fill { /*input[type="checkbox"]*/
+  appearance: none; /*checkbox est invisible*/
   margin: 0px;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   position: absolute;
-  z-index: 2;
+  z-index: 2; /*checkbox est par-dessus les deux coeurs pour que utilisateur puisse cliquer dessus*/
 }
 .heart_fill + .heart_full {
-  transform-origin: bottom;
+  transform-origin: bottom; /*le coeur coloré grandira depuis le bas du coeur vide*/
   transform: scale(0);
   transition: transform 700ms ease-in-out;
 }
@@ -135,7 +142,7 @@ main {
   animation: spin 2s linear infinite;
 }
 
-@keyframes spin {
+@keyframes spin { /*div tourne sur elle-même et donne l'impression que seule partie colorée bouge*/
   0% {
     transform: rotate(0deg);
   }
@@ -144,7 +151,7 @@ main {
   }
 }
 .container {
-  animation: container 0ms 2s both;
+  animation: container 0ms 2s both; /*le contenu de la page n'apparaît qu'une fois que loader anim est terminée*/
 }
 
 @keyframes container {
@@ -174,9 +181,9 @@ header img {
   width: 162px;
   height: 30px;
 }
-header i {
+header i { /*flèche de retour disponible sur les pages des menus*/
   color: #353535;
-  -webkit-text-stroke: 0.5px #353535;
+  -webkit-text-stroke: 0.5px #353535; /*épaissit l'icône*/
   font-size: 1.2rem;
   position: absolute;
   left: 25px;
@@ -249,7 +256,7 @@ footer ul li {
   }
 }
 footer .footer_iconline {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 500;
   font-size: 16px;
   display: flex;
@@ -281,11 +288,11 @@ footer i {
   box-shadow: 0px 2px 4px inset #d1d1d1;
 }
 .location_search {
-  width: 120px;
+  width: 120px; /*permet également à l'icon et text area d'être bien placés sous le logo*/
   border: none;
   background-color: transparent;
   color: #353535;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 500;
   font-size: 16px;
 }
@@ -297,7 +304,7 @@ footer i {
 }
 
 h1, h2 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
   margin: 0;
@@ -316,7 +323,7 @@ h1, h2 {
   padding: 35px 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /*sépare texte de bouton*/
   text-align: center;
   align-items: center;
 }
@@ -362,22 +369,23 @@ h1, h2 {
   }
 }
 .expl ul li {
-  padding: 13px 20px 13px 35px;
+  padding: 13px 20px 13px 35px; /*padding-left est plus grand pour laisser de la place au nombre sur la bordure*/
   display: block;
   width: 100%;
 }
 
 .step {
+  /*pour cartes restau par défaut, mais aussi cartes plats, .step et btn*/
   background: #F6F6F6;
   border-radius: 20px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 500;
   font-size: 16px;
   box-shadow: 0px 4px 15px #d9d9d9;
   height: 72px;
   display: flex;
   align-items: center;
-  position: relative;
+  position: relative; /*positionne carte au-dessus de pseudo-élément ::after*/
   z-index: 1;
 }
 .step_number {
@@ -386,7 +394,7 @@ h1, h2 {
   background-color: #9356DC;
   color: #F6F6F6;
   position: relative;
-  right: 15px;
+  right: 15px; /*décale nombre sur la bordure*/
 }
 .step i {
   color: #7E7E7E;
@@ -408,7 +416,7 @@ h1, h2 {
 .step:hover i {
   color: #9356DC;
 }
-.step::after {
+.step::after { /*pseudo-élément caché qui permet de changer couleur de la carte avec une transition, sans activer calcul de paint*/
   content: "";
   position: absolute;
   top: 0;
@@ -444,17 +452,18 @@ h1, h2 {
 }
 .rstrnts_cardpadding {
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 20px; /*espace entre bord et carte mais aussi entre chaque carte*/
 }
 @media screen and (min-device-width: 768px) {
   .rstrnts_cardpadding {
-    padding: 15px 20px;
+    padding: 15px 20px; /*augmente espace en haut et bas pour que .rstrnts_display ne coupe pas box-shadow*/
   }
 }
 
 .card {
   width: 100%;
   height: 251px;
+  /*pour cartes restau par défaut, mais aussi cartes plats, .step et btn*/
   background: white;
   border-radius: 15px;
   box-shadow: 0px 4px 15px #dddddd;
@@ -467,7 +476,7 @@ h1, h2 {
     width: 335px;
   }
 }
-.card_img-content {
+.card_img-content { /*div et class créées pour positionner widget "Nouveau" sur l'image*/
   position: relative;
   text-align: center;
 }
@@ -484,14 +493,14 @@ h1, h2 {
   background-color: #99E2D0;
 }
 .card .img--center {
-  object-position: 100% 62%;
+  object-position: 100% 62%; /*positionne image du restau la note enchantée au bon endroit*/
 }
 .card img {
   width: 100%;
   height: 180px;
   border-radius: 15px 15px 0px 0px;
   object-fit: cover;
-  object-position: bottom;
+  object-position: bottom; /*positionne les images correctement*/
 }
 .card_txt {
   display: flex;
@@ -504,7 +513,7 @@ h1, h2 {
 
 h3 {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 700;
   font-size: 18px;
 }

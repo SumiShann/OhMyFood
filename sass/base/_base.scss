@@ -14,17 +14,17 @@ body{
     background-color: $white; /*cache le loader une fois l'animation finie*/
 }
 
-a{
-    text-decoration: none;
-    &:visited{
-        color: $color-a;
-    }
-}
-
 main{
     margin: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /*display section menu au centre (visible sur desktop)*/
+}
+
+a{
+    text-decoration: none;
+    &:visited{
+        color: $color-a;
+    }
 }

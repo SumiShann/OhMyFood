@@ -1,5 +1,5 @@
 .image{
-    height: 210px;
+    height: 210px; /*appliquer une hauteur à la div plus petite que la hauteur de img permet à <section> de se positionner légèrement par-dessus img*/
     width: 100%;
     @include tablet{
         height: 300px;
@@ -12,7 +12,7 @@
         object-position: 100% 100%;
         @include tablet{
             height: 440px;
-            object-position: 100% 70%;
+            object-position: 100% 70%; /*positionne img du restau note enchantée au bon endroit sur tablette*/
         }
     }
     img{

@@ -1,11 +1,17 @@
 @charset "UTF-8";
+/*couleur icône dans div.step*/
+/*couleur texte du widget "Nouveau"*/
+/*largeur coche verte*/
+/*hauteur carte des plats et coche verte*/
+/*ombre cartes restau et cartes plats*/
+/*durée du loader*/
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 .container {
@@ -15,6 +21,14 @@ body {
   background-color: white; /*cache le loader une fois l'animation finie*/
 }
 
+main {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*display section menu au centre (visible sur desktop)*/
+}
+
 a {
   text-decoration: none;
 }
@@ -22,16 +36,8 @@ a:visited {
   color: rgba(0, 0, 0, 0);
 }
 
-main {
-  margin: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .image {
-  height: 210px;
+  height: 210px; /*appliquer une hauteur à la div plus petite que la hauteur de img permet à <section> de se positionner légèrement par-dessus img*/
   width: 100%;
 }
 @media screen and (min-device-width: 768px) {
@@ -51,7 +57,7 @@ main {
 @media screen and (min-device-width: 768px) {
   .image .img--center {
     height: 440px;
-    object-position: 100% 70%;
+    object-position: 100% 70%; /*positionne img du restau note enchantée au bon endroit sur tablette*/
   }
 }
 .image img {
@@ -80,9 +86,10 @@ main {
   border: none;
   padding: 15px 0;
   box-shadow: 0px 4px 10px #b6b6b6;
+  /*pour cartes restau par défaut, mais aussi cartes plats, .step et btn*/
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   border-radius: 25px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 500;
   font-size: 16px;
   opacity: 1;
@@ -119,8 +126,8 @@ main {
 .heart {
   position: relative;
   display: flex;
-  align-items: inherit;
-  width: 23px;
+  align-items: inherit; /*les deux svg seront toujours alignés avec le titre*/
+  width: 23px; /*sans width ni height, checkbox n'a aucune superficie*/
   height: 23px;
   margin-left: 30px;
 }
@@ -130,20 +137,20 @@ main {
 }
 .heart_full {
   position: absolute;
-  z-index: 1;
+  z-index: 1; /*le coeur coloré est par-dessus pour couvrir les bordures noires du coeur vide*/
 }
-.heart_fill {
-  appearance: none;
+.heart_fill { /*input[type="checkbox"]*/
+  appearance: none; /*checkbox est invisible*/
   margin: 0px;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   position: absolute;
-  z-index: 2;
+  z-index: 2; /*checkbox est par-dessus les deux coeurs pour que utilisateur puisse cliquer dessus*/
 }
 .heart_fill + .heart_full {
-  transform-origin: bottom;
+  transform-origin: bottom; /*le coeur coloré grandira depuis le bas du coeur vide*/
   transform: scale(0);
   transition: transform 700ms ease-in-out;
 }
@@ -177,9 +184,9 @@ header img {
   width: 162px;
   height: 30px;
 }
-header i {
+header i { /*flèche de retour disponible sur les pages des menus*/
   color: #353535;
-  -webkit-text-stroke: 0.5px #353535;
+  -webkit-text-stroke: 0.5px #353535; /*épaissit l'icône*/
   font-size: 1.2rem;
   position: absolute;
   left: 25px;
@@ -252,7 +259,7 @@ footer ul li {
   }
 }
 footer .footer_iconline {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 500;
   font-size: 16px;
   display: flex;
@@ -278,7 +285,7 @@ section {
   flex: 1;
   position: relative; /*pour que .check ne passe pas sous le background*/
   z-index: 0;
-  overflow-y: hidden;
+  overflow-y: hidden; /*cache les cartes débordant de la section pendant l'animation déclenchée au chargement de la page*/
 }
 @media screen and (min-device-width: 768px) {
   section {
@@ -309,6 +316,27 @@ section article:nth-child(3) {
 section article:nth-child(4) {
   animation: slideUp 2.4s ease forwards;
 }
+section h3 {
+  margin: 0;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /*affiche points de suspension quand texte est trop grand*/
+  transition: width 300ms ease-out;
+}
+section h3 + p {
+  margin: 0;
+  line-height: 1.8;
+  height: 2em;
+  width: 96%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: width 300ms ease-out;
+}
 
 h1 {
   padding: 0px 30px 0px 15px;
@@ -330,31 +358,9 @@ h2 {
   padding-left: 12px;
   margin: 0;
   text-transform: uppercase;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 300;
   font-size: 16px;
-}
-
-h3 {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: width 300ms ease-out;
-}
-h3 + p {
-  margin: 0;
-  line-height: 1.8;
-  height: 2em;
-  width: 96%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: width 300ms ease-out;
 }
 
 .cardpadding {
@@ -363,11 +369,11 @@ h3 + p {
 }
 @media screen and (min-device-width: 768px) {
   .cardpadding {
-    padding: 7px 10px;
+    padding: 7px 10px; /*augmente espace entre chaque carte*/
   }
 }
 
-.cardshadow { /*permet que l'ombre des cartes reste la même, qu'elles soient checked ou non*/
+.cardshadow { /*maintient l'ombre des cartes, qu'elles soient checked ou non*/
   width: 100%;
   background-color: transparent;
   border-radius: 15px;
@@ -376,6 +382,7 @@ h3 + p {
 }
 
 .card {
+  /*pour cartes restau par défaut, mais aussi cartes plats, .step et btn*/
   background: white;
   border-radius: 15px;
   height: 68px; /*68px*/
@@ -401,7 +408,7 @@ h3 + p {
   padding-right: 10px;
 }
 .card_price p {
-  margin: 2px;
+  margin: 2px; /*réduit la margin par défaut à seulement 2px*/
 }
 .card .check {
   width: 59px; /*59px*/
@@ -420,7 +427,7 @@ h3 + p {
   font-size: 1.4rem;
 }
 
-.choice {
+.choice { /*input[type="checkbox"]*/
   appearance: none;
   height: 68px;
   width: 100%;
@@ -434,12 +441,12 @@ h3 + p {
   z-index: 1;
 }
 .choice:checked + .card {
-  width: calc(100% - 59px);
+  width: calc(100% - 59px); /*rétrécit la carte quand input est vrai pour laisser apparaître .check*/
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 .choice:checked + .card h3, .choice:checked + .card h3 + p {
-  width: 90%;
+  width: 90%; /*rétrécit le texte pour qu'il ne gêne pas le glissement du prix vers la gauche*/
 }
 
 /*# sourceMappingURL=delicedessens.css.map */

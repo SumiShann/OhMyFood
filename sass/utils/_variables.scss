@@ -7,30 +7,27 @@ $color-bg: #F6F6F6;
 $color-bg-footer: #353535;
 
 $color-txt: #353535;
-$color-i-step: #7E7E7E;
+$color-i-step: #7E7E7E; /*couleur icône dans div.step*/
 $color-a: #0000;
 
-$color-new: #008766;
-
-$width-check: 59px;
-$width-stroke: 2px;
-$width-heart: 100%;
-
-$height-cardcheck: 68px;
-
-$stepcard-shadow: 0px 4px 15px;
-$btn-shadow: 0px 4px 10px;
-$hover-btn-shadow: 0px 4px 15px;
+$color-new: #008766; /*couleur texte du widget "Nouveau"*/
 $widget-new-shadow: 0px 2px 2px;
 
-$normal-txt: 'Roboto', sans-serif;
-$title-txt: 'Shrikhand', cursive;
+$width-check: 59px; /*largeur coche verte*/
+$height-cardcheck: 68px; /*hauteur carte des plats et coche verte*/
 
 $step-radius: 20px;
-$btn-radius: 25px;
-$btn-height: 15px;
+$stepcard-shadow: 0px 4px 15px; /*ombre cartes restau et cartes plats*/
 
-$loader-dur: 2s;
+$btn-height: 15px;
+$btn-radius: 25px;
+$btn-shadow: 0px 4px 10px;
+$hover-btn-shadow: 0px 4px 15px;
+
+$normal-txt: 'Roboto', Arial, sans-serif;
+$title-txt: 'Shrikhand', cursive;
+
+$loader-dur: 2s; /*durée du loader*/
 $container-delay: $loader-dur;
 
 $txt-typography: (

@@ -21,7 +21,7 @@
 }
 
 
-@keyframes spin {
+@keyframes spin { /*div tourne sur elle-même et donne l'impression que seule partie colorée bouge*/
     0%{
         transform: rotate(0deg);
     }
@@ -31,7 +31,7 @@
 }
 
 .container{
-    animation: container 0ms $container-delay both;
+    animation: container 0ms $container-delay both; /*le contenu de la page n'apparaît qu'une fois que loader anim est terminée*/
 }
 
 @keyframes container{
