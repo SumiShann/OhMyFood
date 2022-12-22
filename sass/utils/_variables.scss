@@ -30,6 +30,9 @@ $step-radius: 20px;
 $btn-radius: 25px;
 $btn-height: 15px;
 
+$loader-dur: 2s;
+$container-delay: $loader-dur;
+
 $txt-typography: (
     home-h2:(
         font: $normal-txt,

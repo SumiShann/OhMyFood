@@ -162,7 +162,7 @@ h1{
     box-shadow: $stepcard-shadow darken($color-bg, 10%);
     display: flex;
     flex-direction: column;
-    color: black;
+    color: black; /*la couleur doit être mentionnée sinon la balise <a> fait disparaître le texte*/
     @include tablet{
         width: 335px;
     }
