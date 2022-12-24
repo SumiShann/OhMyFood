@@ -1,10 +1,12 @@
 @charset "UTF-8";
+/*Utils*/
 /*couleur icône dans div.step*/
 /*couleur texte du widget "Nouveau"*/
 /*largeur coche verte*/
 /*hauteur carte des plats et coche verte*/
 /*ombre cartes restau et cartes plats*/
 /*durée du loader*/
+/*Base*/
 * {
   box-sizing: border-box;
 }
@@ -36,6 +38,7 @@ a:visited {
   color: rgba(0, 0, 0, 0);
 }
 
+/*Components*/
 .image {
   height: 210px; /*appliquer une hauteur à la div plus petite que la hauteur de img permet à <section> de se positionner légèrement par-dessus img*/
   width: 100%;
@@ -124,12 +127,9 @@ a:visited {
 }
 
 .heart {
-  position: relative;
-  display: flex;
-  align-items: inherit; /*les deux svg seront toujours alignés avec le titre*/
-  width: 23px; /*sans width ni height, checkbox n'a aucune superficie*/
-  height: 23px;
   margin-left: 30px;
+  width: 23px;
+  height: 23px;
 }
 .heart_empty {
   position: absolute;
@@ -139,23 +139,19 @@ a:visited {
   position: absolute;
   z-index: 1; /*le coeur coloré est par-dessus pour couvrir les bordures noires du coeur vide*/
 }
-.heart_fill { /*input[type="checkbox"]*/
+.heart input[id] { /*input[type="checkbox"]*/
   appearance: none; /*checkbox est invisible*/
-  margin: 0px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  position: absolute;
-  z-index: 2; /*checkbox est par-dessus les deux coeurs pour que utilisateur puisse cliquer dessus*/
 }
-.heart_fill + .heart_full {
-  transform-origin: bottom; /*le coeur coloré grandira depuis le bas du coeur vide*/
+.heart input[id] + label .heart_full {
   transform: scale(0);
   transition: transform 700ms ease-in-out;
 }
-.heart_fill:checked + .heart_full {
+.heart input[id]:checked + label .heart_full {
   transform: scale(1);
+}
+.heart label {
+  display: flex;
+  align-items: center;
 }
 
 @keyframes slideUp {
@@ -166,6 +162,7 @@ a:visited {
     transform: translateY(0);
   }
 }
+/*Layout*/
 header {
   display: flex;
   justify-content: center;
@@ -353,6 +350,9 @@ h1 {
     margin-bottom: 50px;
   }
 }
+h1 .heart {
+  display: flex;
+}
 
 h2 {
   padding-left: 12px;
@@ -449,4 +449,4 @@ h2 {
   width: 90%; /*rétrécit le texte pour qu'il ne gêne pas le glissement du prix vers la gauche*/
 }
 
-/*# sourceMappingURL=palettedugout.css.map */
+/*# sourceMappingURL=restaurants.css.map */

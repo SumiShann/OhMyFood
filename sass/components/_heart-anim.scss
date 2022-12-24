@@ -1,10 +1,7 @@
 .heart{
-    position: relative;
-    display: flex;
-    align-items: inherit; /*les deux svg seront toujours alignés avec le titre*/
-    width: 23px; /*sans width ni height, checkbox n'a aucune superficie*/
-    height: 23px;
     margin-left: 30px;
+    width: 23px;
+    height: 23px;
     &_empty{
         position: absolute;
         z-index: 0;
@@ -13,22 +10,18 @@
         position: absolute;
         z-index: 1; /*le coeur coloré est par-dessus pour couvrir les bordures noires du coeur vide*/
     }
-    &_fill{ /*input[type="checkbox"]*/
+    input[id]{ /*input[type="checkbox"]*/
         appearance: none; /*checkbox est invisible*/
-        margin: 0px;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        position: absolute;
-        z-index: 2; /*checkbox est par-dessus les deux coeurs pour que utilisateur puisse cliquer dessus*/
-        + .heart_full{
-            transform-origin: bottom; /*le coeur coloré grandira depuis le bas du coeur vide*/
-            transform: scale(0);
-            transition: transform 700ms ease-in-out;
+        + label .heart_full{
+                transform: scale(0);
+                transition: transform 700ms ease-in-out;
         }
-        &:checked + .heart_full{
+        &:checked + label .heart_full{
             transform: scale(1);
         }
+    }
+    label{
+        display: flex;
+        align-items: center;
     }
 }
