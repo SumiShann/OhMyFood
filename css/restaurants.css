@@ -130,6 +130,7 @@ a:visited {
   margin-left: 30px;
   width: 23px;
   height: 23px;
+  position: relative;
 }
 .heart_empty {
   position: absolute;
